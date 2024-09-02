@@ -1,6 +1,5 @@
  import logo from './logo.svg';
 import './App.css';
-import Dashboard from './Components/Dashboard';
 import InterviewScheduling from './Components/InterviewScheduling';
 import CandidateManagement from './Components/CandidateManagement';
 import Login from './Components/Login';
@@ -16,13 +15,12 @@ function App() {
       
       <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
           <Route path='/HRRegistration' element={<HRRegistration/>}/>
           <Route path='/HRLogin' element={<HRLogin/>}/>
           <Route path="/Scheduling" element={<InterviewScheduling />} />
           <Route path="/Candidates" element={<CandidateManagement />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
+          <Route path='/Register' element={<Register/>}/>
       </Routes>
      
     </div>  

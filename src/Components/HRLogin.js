@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CandidateManagement from './CandidateManagement'; 
 
 function HRLogin() {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ function HRLogin() {
   });
 
   const [errors, setErrors] = useState({});
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Flag 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,11 +26,17 @@ function HRLogin() {
 
     if (Object.keys(newErrors).length === 0) {
       console.log('Login attempt:', formData);
-      // Add authentication logic here (e.g., API call)
+      // Simulate successful login by setting isAuthenticated to true
+      setIsAuthenticated(true);
     } else {
       setErrors(newErrors);
     }
   };
+
+  // Conditional rendering: If authenticated, show Candidate Management, else show login form
+  if (isAuthenticated) {
+    return <CandidateManagement />;
+  }
 
   return (
     <div className="hr-login-container">
